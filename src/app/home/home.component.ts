@@ -1,11 +1,17 @@
 import { Component } from '@angular/core';
 import { CommonModule } from '@angular/common';
+import { TopPlayersComponent } from '../top-players/top-players.component';
+import { TopShoesComponent } from '../top-shoes/top-shoes.component'; // <-- AÑADE ESTO
 import { trigger, transition, style, animate } from '@angular/animations';
 
 @Component({
   selector: 'app-home',
   standalone: true,
-  imports: [CommonModule],
+  imports: [
+    CommonModule,
+    TopPlayersComponent,
+    TopShoesComponent
+  ],
   templateUrl: './home.component.html',
   styleUrls: ['./home.component.scss'],
   animations: [

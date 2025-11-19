@@ -1,0 +1,25 @@
+<div class="top-players-container">
+  <h2 class="section-title">Top Jugadores</h2>
+
+  <div class="players-grid">
+    <div class="card" *ngFor="let player of topPlayers">
+      <div class="card-inner">
+        <!-- Front side: foto del jugador -->
+        <div class="card-front">
+          <img [src]="'assets/' + player.photo" alt="{{ player.name }}" class="player-photo" />
+        </div>
+        <!-- Back side: estadísticas -->
+        <div class="card-back">
+          <div>
+            <h3>{{ player.name }}</h3>
+            <p><strong>PTS:</strong> {{ player.pts }}</p>
+            <p><strong>REB:</strong> {{ player.reb }}</p>
+            <p><strong>AST:</strong> {{ player.ast }}</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <button class="see-more" routerLink="/jugadores">Ver más</button>
+</div>

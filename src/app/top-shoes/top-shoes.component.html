@@ -1,0 +1,33 @@
+<div class="top-shoes-container">
+  <!-- Fondo SVG/Patrón -->
+  <div class="island"></div>
+  <div class="islandt"></div>
+
+  
+<div class="top-shoes-container">
+  <h2 class="section-title">Top Zapatillas</h2>
+
+  <div class="shoes-grid">
+    <div class="card" *ngFor="let shoe of topShoes">
+      <!-- Fondo animado -->
+      <div class="blob"></div>
+
+      <!-- Contenido principal -->
+      <div class="bg">
+        <p class="shoe-title">{{ shoe.name }}</p>
+        <img [src]="shoe.photo" alt="{{ shoe.name }}" />
+      </div>
+    </div>
+  </div>
+
+  <button class="see-more">Ver más</button>
+</div>
+
+
+
+  <!-- Filtros SVG -->
+  <svg height="0" width="0">
+    <!-- Filtros octave1 y octave2 -->
+  </svg>
+</div>
+
