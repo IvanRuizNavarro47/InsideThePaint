@@ -9,12 +9,13 @@
     margin-bottom: 40px;
   }
 
-  .players-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-    gap: 40px;
-    justify-items: center;
-  }
+.players-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr); // siempre 2 por fila
+  gap: 40px;
+  justify-items: center;
+}
+
 
   .card {
     width: 250px;

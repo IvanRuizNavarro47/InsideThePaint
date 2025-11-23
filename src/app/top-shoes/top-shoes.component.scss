@@ -1,105 +1,200 @@
-.top-shoes-container {
+.hero-banner {
+  width: 100%;
+  height: 100vh;
+  position: relative;
+  overflow: hidden;
+}
+
+/* Imagen que cubre todo */
+.banner-image img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center;
+  display: block;
+}
+
+/* CONTENIDO ENCIMA DE LA IMAGEN */
+.banner-content {
+  position: absolute;
+  top: 50%;               /* centrar vertical */
+  left: 50%;              /* centrar horizontal */
+  transform: translate(-50%, -50%);
   text-align: center;
-  padding: 80px 20px;
+  color: white;           /* IMPORTANTE: si no, no se ve */
+  z-index: 10;            /* ENSIMA de la imagen */
+}
+
+/* Título */
+.banner-content h1 {
+  font-size: 3rem;
+  font-weight: 700;
+  margin-bottom: 20px;
+  text-shadow: 0px 4px 10px rgba(0,0,0,0.5); /* Mejor visibilidad */
+}
+
+/* Botón */
+.banner-btn {
+  padding: 15px 30px;
+  font-size: 1.2rem;
+  background-color: #ff3b30;
+  border: none;
   color: white;
-  background-color: #2e2e2e; // gris oscuro de fondo
-  min-height: 100vh;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: 0.3s;
+}
 
-  .section-title {
-    font-family: "Limelight", sans-serif;
-    font-size: 3.5rem;
-    margin-bottom: 50px;
-    color: white;
-  }
+.banner-btn:hover {
+  background-color: #d32f2f;
+}
 
-  .shoes-grid {
-    display: grid;
-    grid-template-columns: repeat(2, 1fr); // 2 por fila
-    gap: 50px;
-    justify-items: center;
-  }
 
-  .card {
-    position: relative;
-    width: 300px;  // más grande
-    height: 400px; // más grande
-    border-radius: 16px;
-    overflow: hidden;
-    display: flex;
+/* --- Responsive --- */
+@media (max-width: 900px) {
+  .hero-banner {
     flex-direction: column;
-    align-items: center;
     justify-content: center;
-    box-shadow: 20px 20px 60px #bebebe, -20px -20px 60px #ffffff;
-    cursor: pointer;
-
-    .blob {
-      position: absolute;
-      z-index: 1;
-      top: 50%;
-      left: 50%;
-      width: 200px;
-      height: 200px;
-      border-radius: 50%;
-      background-color: #ff0000;
-      opacity: 0.5;
-      filter: blur(14px);
-      animation: blob-bounce 5s infinite ease;
-    }
-
-    .bg {
-      position: absolute;
-      top: 5px;
-      left: 5px;
-      width: 290px;
-      height: 390px;
-      z-index: 2;
-      background: rgba(255, 255, 255, 0.95);
-      backdrop-filter: blur(24px);
-      border-radius: 12px;
-      overflow: hidden;
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      justify-content: center;
-
-      .shoe-title {
-        font-family: "Limelight", sans-serif;
-        font-size: 2rem;
-        margin-bottom: 15px;
-        color: #000;
-        text-align: center;
-      }
-
-      img {
-        width: 85%;
-        height: auto;
-        border-radius: 10px;
-      }
-    }
+    text-align: center;
+    padding: 40px 20px;
   }
 
-  @keyframes blob-bounce {
-    0% { transform: translate(-100%, -100%) translate3d(0,0,0); }
-    25% { transform: translate(-100%, -100%) translate3d(100%,0,0); }
-    50% { transform: translate(-100%, -100%) translate3d(100%,100%,0); }
-    75% { transform: translate(-100%, -100%) translate3d(0,100%,0); }
-    100% { transform: translate(-100%, -100%) translate3d(0,0,0); }
+  .banner-image img {
+    height: 50vh;
   }
 
-  .see-more {
-    margin-top: 50px;
-    padding: 14px 35px;
-    font-size: 1.5rem;
-    border-radius: 35px;
-    font-family: "Limelight", sans-serif;
-    border: none;
-    background: #e53935;
-    color: white;
-    cursor: pointer;
-    transition: background 0.3s ease;
-
-    &:hover {
-      background: #b71c1c;
-    }
+  .banner-title {
+    font-size: 2.5rem;
   }
+}
+
+
+.carousel {
+  position: relative;
+  width: 100vw;
+  height: 100vh;
+  overflow: hidden;
+}
+
+.slides {
+  display: flex;
+  width: 300vw; /* 3 diapositivas */
+  height: 100%;
+  transition: transform 0.7s ease-in-out;
+}
+
+.slide {
+  position: relative;
+  width: 100vw;
+  height: 100vh;
+}
+
+.slide img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.content {
+  position: absolute;
+  top: 50%;
+  left: 10%;
+  transform: translateY(-50%);
+  color: white;
+  z-index: 10;
+  text-shadow: 0 4px 15px rgba(0,0,0,0.7);
+}
+
+.content h1 {
+  font-family: "Limelight", sans-serif; /* o "Racing Sans One" si quieres */
+  font-size: 4rem;
+  margin-bottom: 20px;
+  color: white;
+  text-shadow: 0 4px 15px rgba(0,0,0,0.7);
+}
+
+.content button {
+  font-family: "Racing Sans One", sans-serif;
+  padding: 12px 28px;
+  font-size: 1.3rem;
+  border: none;
+  background: #ff3b30;
+  color: white;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: background 0.3s ease;
+}
+
+.content button:hover {
+  background: #d32f2f;
+}
+
+
+/* Flechas */
+.arrow {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  background: rgba(0,0,0,0.4);
+  border: none;
+  color: white;
+  font-size: 2.5rem;
+  padding: 8px 15px;
+  cursor: pointer;
+  z-index: 20;
+  border-radius: 50%;
+}
+
+.arrow.left { left: 20px; }
+.arrow.right { right: 20px; }
+
+/* Dots */
+.dots {
+  position: absolute;
+  bottom: 20px;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  gap: 10px;
+  z-index: 20;
+}
+
+.dots span {
+  width: 12px;
+  height: 12px;
+  border-radius: 50%;
+  background: white;
+  opacity: 0.5;
+  cursor: pointer;
+}
+
+.dots .active {
+  opacity: 1;
+}
+
+
+body, html {
+  margin: 0;
+  padding: 0;
+  overflow-x: hidden; /* evita el scroll horizontal */
+}
+
+.hero-banner {
+  width: 100vw; /* asegura que no sobrepase el viewport */
+  height: 100vh; /* altura total de la pantalla */
+  overflow: hidden; /* evita que la imagen sobresalga */
+  position: relative;
+}
+
+.hero-banner img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover; /* la imagen cubre todo el banner sin deformarse */
+  display: block; /* evita espacios debajo de la imagen */
+}
+
+
+.hero-banner-wrapper {
+  width: 100%;
+  overflow: hidden; /* todo lo que sobresalga se corta */
 }

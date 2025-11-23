@@ -1,33 +1,46 @@
-<div class="top-shoes-container">
-  <!-- Fondo SVG/Patrón -->
-  <div class="island"></div>
-  <div class="islandt"></div>
+<div class="carousel">
 
-  
-<div class="top-shoes-container">
-  <h2 class="section-title">Top Zapatillas</h2>
-
-  <div class="shoes-grid">
-    <div class="card" *ngFor="let shoe of topShoes">
-      <!-- Fondo animado -->
-      <div class="blob"></div>
-
-      <!-- Contenido principal -->
-      <div class="bg">
-        <p class="shoe-title">{{ shoe.name }}</p>
-        <img [src]="shoe.photo" alt="{{ shoe.name }}" />
+  <div class="slides" [style.transform]="'translateX(-' + currentIndex * 100 + 'vw)'">
+    
+    <!-- Slide 1 -->
+    <div class="slide">
+      <img src="assets/Ja3.png" alt="">
+      <div class="content">
+        <h1>JA 3</h1>
+        <button>Saber más</button>
       </div>
     </div>
+
+    <!-- Slide 2 -->
+    <div class="slide">
+      <img src="assets/book.jpeg" alt="">
+      <div class="content">
+        <h1>Book 1</h1>
+        <button>Saber más</button>
+      </div>
+    </div>
+
+    <!-- Slide 3 -->
+    <div class="slide">
+      <img src="assets/lebron23.png" alt="">
+      <div class="content">
+        <h1>LeBron 23</h1>
+        <button>Saber más</button>
+      </div>
+    </div>
+
   </div>
 
-  <button class="see-more">Ver más</button>
+  <!-- Controles -->
+  <button class="arrow left" (click)="prev()">❮</button>
+  <button class="arrow right" (click)="next()">❯</button>
+
+  <!-- Dots -->
+  <div class="dots">
+    <span *ngFor="let dot of [0,1,2]; let i = index" 
+          [class.active]="i === currentIndex"
+          (click)="goTo(i)">
+    </span>
+  </div>
+
 </div>
-
-
-
-  <!-- Filtros SVG -->
-  <svg height="0" width="0">
-    <!-- Filtros octave1 y octave2 -->
-  </svg>
-</div>
-
