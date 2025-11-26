@@ -3,6 +3,7 @@ import { CommonModule } from '@angular/common';
 import { TopPlayersComponent } from '../top-players/top-players.component';
 import { TopShoesComponent } from '../top-shoes/top-shoes.component'; // <-- AÑADE ESTO
 import { trigger, transition, style, animate } from '@angular/animations';
+import { TopTeamsComponent } from "../top-teams/top-teams.component";
 
 @Component({
   selector: 'app-home',
@@ -10,8 +11,9 @@ import { trigger, transition, style, animate } from '@angular/animations';
   imports: [
     CommonModule,
     TopPlayersComponent,
-    TopShoesComponent
-  ],
+    TopShoesComponent,
+    TopTeamsComponent
+],
   templateUrl: './home.component.html',
   styleUrls: ['./home.component.scss'],
   animations: [

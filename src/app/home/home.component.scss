@@ -45,3 +45,50 @@
     margin-top: 10px;
   }
 }
+
+.site-footer {
+  width: 100%;
+  padding: 30px 20px;
+  background-color: #0a0a0a;
+  color: white;
+  text-align: center;
+  border-top: 2px solid #f39c12;
+
+  .footer-content {
+    max-width: 1200px;
+    margin: 0 auto;
+
+    p {
+      margin: 0 0 10px 0;
+      font-family: 'Bebas Neue', sans-serif;
+      font-size: 1.1rem;
+    }
+
+    .footer-links {
+      display: flex;
+      justify-content: center;
+      gap: 20px;
+      flex-wrap: wrap;
+
+      a {
+        color: #f39c12;
+        text-decoration: none;
+        font-family: 'Limelight', sans-serif;
+        font-size: 1rem;
+        transition: color 0.3s;
+
+        &:hover {
+          color: white;
+        }
+      }
+    }
+  }
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .site-footer .footer-links {
+    flex-direction: column;
+    gap: 10px;
+  }
+}

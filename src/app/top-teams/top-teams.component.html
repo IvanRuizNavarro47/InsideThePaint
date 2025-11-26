@@ -1,0 +1,13 @@
+<section class="nba-history">
+  <h2>Historia y Noticias de la NBA</h2>
+  <div class="history-cards">
+    <div class="history-card" *ngFor="let news of nbaHistory">
+      <img [src]="news.photo" [alt]="news.title">
+      <div class="history-content">
+        <h3>{{ news.title }}</h3>
+        <p>{{ news.summary }}</p>
+        <a [href]="news.link" target="_blank">Leer más</a>
+      </div>
+    </div>
+  </div>
+</section>

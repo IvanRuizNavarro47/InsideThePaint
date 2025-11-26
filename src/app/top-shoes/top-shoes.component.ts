@@ -32,9 +32,7 @@ goTo(i: number) {
   this.currentIndex = i;
 }
 
-ngOnInit() {
-  setInterval(() => this.next(), 4000);
-}
+
 
 }
 
