@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
-import { RouterModule } from '@angular/router';
+import { NavigationEnd, Router, RouterModule } from '@angular/router';
+import { filter } from 'rxjs';
 
 @Component({
   selector: 'app-root',
@@ -8,4 +9,14 @@ import { RouterModule } from '@angular/router';
   templateUrl: './app.component.html',
   styleUrls: ['./app.component.scss']
 })
-export class AppComponent {}
+export class AppComponent {
+
+   constructor(private router: Router) {
+    // Cada vez que cambia la ruta, se resetea el scroll
+    this.router.events
+      .pipe(filter(event => event instanceof NavigationEnd))
+      .subscribe(() => {
+        window.scrollTo({ top: 0, left: 0, behavior: 'smooth' });
+      });
+   }
+  }
