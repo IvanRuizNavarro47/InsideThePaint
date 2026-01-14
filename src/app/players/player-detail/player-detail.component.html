@@ -1,1 +1,29 @@
-<p>player-detail works!</p>
+<div class="player-detail" *ngIf="player">
+
+  <!-- Fondo -->
+  <div class="fondo">
+    <div class="container"></div>
+  </div>
+
+  <!-- Contenido encima del fondo -->
+  <div class="content-wrapper">
+    <!-- Stack solo para la foto -->
+    <div class="stack">
+      <div class="card">
+        <div class="image">
+          <img [src]="player.photo" [alt]="player.name">
+        </div>
+      </div>
+    </div>
+
+    <!-- Detalles del jugador -->
+    <div class="player-info">
+      <h1>{{ player.name }}</h1>
+      <p><strong>Team:</strong> {{ player.team }}</p>
+      <p><strong>Year:</strong> {{ player.year }}</p>
+      <p><strong>Position:</strong> {{ player.position }}</p>
+      <button routerLink="/players">Volver a la lista</button>
+    </div>
+  </div>
+
+</div>

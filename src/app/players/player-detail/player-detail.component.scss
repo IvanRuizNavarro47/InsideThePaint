@@ -1,0 +1,151 @@
+/* Fondo */
+.fondo {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 0; /* atrás */
+}
+
+.container {
+  width: 100%;
+  height: 100%;
+  --color: rgba(114, 114, 114, 0.3);
+  background-color: #191a1a;
+  background-image: linear-gradient(
+      0deg, transparent 24%, var(--color) 25%, var(--color) 26%, transparent 27%, transparent 74%, var(--color) 75%, var(--color) 76%, transparent 77%, transparent),
+    linear-gradient(
+      90deg, transparent 24%, var(--color) 25%, var(--color) 26%, transparent 27%, transparent 74%, var(--color) 75%, var(--color) 76%, transparent 77%, transparent);
+  background-size: 55px 55px;
+}
+
+/* Contenedor del contenido para que esté encima del fondo */
+.content-wrapper {
+  position: relative;
+  z-index: 10;
+  width: 100%;
+  padding: 2rem 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+/* --- Stack solo para la foto --- */
+.stack {
+  width: 55%;
+  max-width: 400px;
+  margin-bottom: 2rem;
+  transition: 0.25s ease;
+}
+
+.stack:hover {
+  transform: rotate(5deg);
+}
+
+.card {
+  margin-top: 10em;
+  aspect-ratio: 3 / 2;
+  border: 4px solid #ccc;
+  background-color: #fff;
+  position: relative;
+  transition: 0.15s ease;
+  cursor: pointer;
+  padding: 5%;
+}
+
+.card::before,
+.card::after {
+  content: "";
+  display: block;
+  position: absolute;
+  height: 100%;
+  width: 100%;
+  border: 4px solid #ccc;
+  background-color: #fff;
+  transform-origin: center center;
+  z-index: -1;
+  transition: 0.15s ease;
+  top: 0;
+  left: 0;
+}
+
+.card::before {
+  transform: translateY(-2%) rotate(-6deg);
+}
+
+.card::after {
+  transform: translateY(2%) rotate(6deg);
+}
+
+/* Imagen dentro de la tarjeta */
+.image {
+  width: 100%;
+  aspect-ratio: 1 / 1;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border: 4px solid #eee;
+  background-color: #eee;
+}
+
+.image img {
+  width: 90%;
+  height: auto;
+  display: block;
+  border-radius: 8px;
+}
+
+/* --- Detalles normales debajo de la foto --- */
+.player-info {
+  width: 60%;
+  max-width: 500px;
+  text-align: center;
+}
+
+.player-info h1 {
+  margin-bottom: 1rem;
+  font-size: 2rem;
+  color: white; /* Para que contraste con fondo oscuro */
+}
+
+.player-info p {
+  margin: 0.5rem 0;
+  font-size: 1.1rem;
+  color: white;
+}
+
+.player-info button {
+  margin-top: 1rem;
+  padding: 0.5rem 1rem;
+  border-radius: 8px;
+  border: none;
+  background-color: #5bc0eb;
+  color: white;
+  cursor: pointer;
+  font-weight: 600;
+  transition: background-color 0.3s;
+}
+
+.player-info button:hover {
+  background-color: #53aed4;
+}
+
+/* --- Responsive --- */
+@media (max-width: 768px) {
+  .stack {
+    width: 80%;
+  }
+
+  .player-info {
+    width: 90%;
+  }
+
+  .player-info h1 {
+    font-size: 1.5rem;
+  }
+
+  .player-info p {
+    font-size: 1rem;
+  }
+}
