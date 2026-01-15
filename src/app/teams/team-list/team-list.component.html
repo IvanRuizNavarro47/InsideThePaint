@@ -1,1 +1,15 @@
-<p>team-list works!</p>
+<div class="teams-container">
+  <div
+    class="team-card"
+    *ngFor="let team of teams"
+    [routerLink]="['/teams', team.id]"
+    [style.background]="team.color"
+  >
+    <img [src]="team.logo" [alt]="team.name" />
+
+    <div class="team-info">
+      <h2>{{ team.city }}</h2>
+      <h1>{{ team.name }}</h1>
+    </div>
+  </div>
+</div>
