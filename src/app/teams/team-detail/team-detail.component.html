@@ -1,1 +1,20 @@
-<p>team-detail works!</p>
+<div class="team-detail" *ngIf="team">
+
+  <img
+    [src]="team.logo"
+    [alt]="team.name"
+    class="team-logo"
+  >
+
+  <h1>{{ team.name }}</h1>
+
+  <p class="city">{{ team.city }}</p>
+
+  <div
+    class="color-box"
+    [style.background]="team.color"
+  ></div>
+
+  <button routerLink="/teams">Volver a equipos</button>
+
+</div>
